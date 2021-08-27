@@ -31,6 +31,12 @@ body {
     
 }
 
+@media only screen and (max-width: 750px) {
+  nav {
+    visibility: hidden;
+  }
+}
+
 
 
 
