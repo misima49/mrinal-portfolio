@@ -14,20 +14,16 @@ document.addEventListener('aos:in:skill-bars', ({ detail }) => {
     });
 });
 
-document.addEventListener('aos:out:skill-bars', ({ detail }) => {
-    alert("scrolled bars");
-});
-
 $(".nav-item i").mouseover(function(e) {
     console.log($(e.target).text());
     switch($(e.target).text()) {
-        case "home": $("<span>Home</span>").insertAfter($(e.target));
+        case "home": $("<span> Home</span>").insertAfter($(e.target));
                             break;
-        case "engineering": $("<span>Skills</span>").insertAfter($(e.target));
+        case "engineering": $("<span> Skills</span>").insertAfter($(e.target));
                             break;
-        case "description": $("<span>Resume</span>").insertAfter($(e.target));
+        case "description": $("<span> Resume</span>").insertAfter($(e.target));
                             break;
-        case "email": $("<span>Contact</span>").insertAfter($(e.target));
+        case "email": $("<span> Contact</span>").insertAfter($(e.target));
                             break;
     }
 }).mouseout(function(e) {

@@ -1,4 +1,8 @@
+/*https://colorhunt.co/palette/2a09443b185fa12568fec260*/
+
 body {
+    background-color: #2A0944;
+    color: #FFF;
     text-align: center;
 }
 
@@ -25,10 +29,20 @@ body {
 
 .nav-item {
     margin: 1rem;
+    background-color: #FEC260;
     color: white;
     border-radius: 100px/100px;
     padding: 10px;
     
+}
+
+a, a:hover {
+    color: #A12568;
+    text-decoration: none;
+}
+
+.nav-item i {
+    vertical-align: -30%;
 }
 
 @media only screen and (max-width: 750px) {
@@ -42,7 +56,7 @@ body {
 
 /***********Title Section************/
 
-.title-section {
+#title-section {
     display: inline-flex;
     justify-content: center;
     height: 100vh;
@@ -56,7 +70,7 @@ body {
 
 /***Skills Section***/
 
-.skill-section {
+#skill-section {
     display: flex;
     align-items: center;
     padding: 2rem 1rem;
@@ -92,7 +106,7 @@ body {
 
 /***********About Section*************/
 
-.about-section {
+#about-section {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -103,6 +117,8 @@ body {
 
 .about-list {
     list-style-type: none;
+    text-align: left;
+    white-space: nowrap;
 }
 
 .about-list>li:before {
