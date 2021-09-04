@@ -7,6 +7,7 @@
     <header></header>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
@@ -41,10 +42,21 @@
     <div id="title-section">
         <h1>Mrinal Singh Malav</h1>
         <div>
+            <span>I am </span>
             <div id="typed-strings">
-                <p>I am web developer.</p>
+                <p>a Web Developer.</p>
+                <p>a Designer.</p>
+                <p>an Engineer.</p>
+                <p>a Student.</p>
             </div>
             <span id="typed"></span>
+        </div>
+
+        <div>
+            <a href="https://www.linkedin.com/in/mrinal-malav/"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://github.com/misima49"><i class='bx bxl-github'></i></a>
+            <a href="https://stackoverflow.com/users/13559216/misima49"><i class='bx bxl-stack-overflow'></i></a>
+            <a href="https://twitter.com/MiSiMa_49"><i class='bx bxl-twitter'></i></a>
         </div>
 
     </div>
@@ -98,15 +110,8 @@
 
                     </div>
 
-
-
-
                 </div>
 
-
-
-
-                <h2>welp</h2>
             </div>
         </div>
     </div>
@@ -125,16 +130,17 @@
                     <ul class="about-list">
                         <li><strong>Born on:</strong> 9th March 2002</li>
                         <li><strong>Contact no.:</strong> +91 7905768694</li>
-                        <li><strong>Email:</strong> malavmrinal@gmail.com</li>
                         <li><strong>Most recent qualification:</strong> B.Tech</li>
+                        <li><strong>View Resume:</strong> <a
+                                href="https://drive.google.com/file/d/1QBHrkHWk8wDqWhFWmfaS04Dq_9cHu4m4/view?usp=sharing" target="_blank"
+                                rel="noopener noreferrer"> Resume</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
                     <ul class="about-list">
-                        <li><strong>Born on:</strong> 9th March 2002</li>
-                        <li><strong>Born on:</strong> 9th March 2002</li>
-                        <li><strong>Born on:</strong> 9th March 2002</li>
-                        <li><strong>Born on:</strong> 9th March 2002</li>
+                        <li><strong>Age:</strong> 19 Years</li>
+                        <li><strong>Email:</strong> malavmrinal@gmail.com</li>
+                        <li><strong>Major in:</strong> Computer Engineering</li>
                     </ul>
                 </div>
             </div>
@@ -144,6 +150,8 @@
     <!-- Projects/Contributions Section -->
 
     <div class="container" id="projects-section">
+        <h2>Projects/Contributions</h2>
+
         <div id="projectsSlides" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#projectsSlides" data-bs-slide-to="0" class="active"
@@ -158,7 +166,7 @@
                     <a href="https://iiit-security-system.herokuapp.com/login" target="_blank"
                         rel="noopener noreferrer">
                         <img src="./images/iiit-security.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption">
 
                             <h5>IIIT Security System</h5>
                             <p>A wallpapers website where anyone can add images.</p>
@@ -169,21 +177,21 @@
                 <div class="carousel-item active">
                     <a href="https://image-db-hackerearth.herokuapp.com/" target="_blank" rel="noopener noreferrer">
                         <img src="./images/2.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption">
 
                             <h5>ImageDB</h5>
                             <p>Wallpapers site where anyone can add images.</p>
                         </div>
-                        <a />
+                    </a>
                 </div>
                 <div class="carousel-item">
                     <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
                         <img src="./images/3.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption">
                             <h5>Aoi Discord Bot</h5>
                             <p>A discord server moderator bot.</p>
                         </div>
-                        <a />
+                    </a>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#projectsSlides" data-bs-slide="prev">
@@ -197,6 +205,53 @@
         </div>
     </div>
 
+
+    <!-- Contact me section -->
+    
+    <div data-aos="fade-right" class="container" id="contact-section">
+        <div class="row">
+            <h2>Contact Me</h2>
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-6  side-text-contact-form">
+                <p>Connect to discuss tech,</p>
+                <p>Connect to discuss tech,</p>
+                <p>Connect to discuss tech,</p>
+                <p>Connect to discuss tech,</p>
+            </div>
+    
+            <div class="col-lg-6">
+                <form id="fs-frm" name="contact-form" accept-charset="utf-8" action="https://formspree.io/f/mjvjjojq"
+                    method="post">
+                    <fieldset id="fs-frm-inputs">
+    
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="name" id="full-name" placeholder="Full Name"
+                                required="true" aria-label="Your full name">
+    
+                            <input type="email" class="form-control" name="_replyto" id="email-address"
+                                placeholder="E-mail id" required="true" aria-label="Your email id">
+                        </div>
+    
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="_subject" id="subject" placeholder="Subject"
+                                required="false" aria-label="Subject">
+                        </div>
+    
+                        <div class="input-group">
+                            <textarea rows="5" class="form-control" name="message" id="message" placeholder="Your message"
+                                required="true" aria-label="Your message"></textarea>
+                            <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                        </div>
+                    </fieldset>
+    
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
@@ -215,5 +270,15 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="test.js"></script>
 </body>
+
+<footer>
+    <h2>Mrinal Singh Malav</h2>
+    <div>
+        <i class='bx bxl-linkedin-square'></i>
+        <i class='bx bxl-github'></i>
+        <i class='bx bxl-stack-overflow'></i>
+        <i class='bx bxl-twitter'></i>
+    </div>
+</footer>
 
 </html>

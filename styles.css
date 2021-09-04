@@ -1,9 +1,17 @@
 /*https://colorhunt.co/palette/2a09443b185fa12568fec260*/
 
 body {
-    background-color: #2A0944;
+    background-color: #3B185F;
     color: #FFF;
     text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    margin-bottom: 2rem;
 }
 
 #particles-js {
@@ -15,6 +23,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+    z-index: -1000;
   }
 /************Navbar*************/
 #header {
@@ -23,7 +32,7 @@ body {
     left: 0;
     bottom: 0;
     padding: 15px;
-    z-index: 999;
+    z-index: 1;
     overflow-y: auto;
 }
 
@@ -70,13 +79,31 @@ a:hover {
 #title-section {
     display: inline-flex;
     justify-content: center;
+    align-items: start;
     height: 100vh;
     flex-direction: column;
+    margin: 2rem 0.8rem 0 0;
+    font-size: 2rem;
+}
+
+#title-section > div > span {
+    font-size: 2rem;
 }
 
 #typed,
 .typed-cursor {
-    color: red;
+    color: #FEC260;
+    font-size: 2rem;
+}
+
+#title-section i {
+
+}
+
+@media only screen and (max-width: 750px) {
+    #title-section div{
+        padding-left: 2rem;
+    }
 }
 
 /***Skills Section***/
@@ -141,7 +168,12 @@ a:hover {
     vertical-align: -20%;
 }
 
-/**********Projects/Contributions Section**********/
+.about-list a {
+    text-decoration: none;
+    color: #FEC260;
+}
+
+/********** Projects/Contributions Section **********/
 
 #projects-section {
     display: flex;
@@ -153,6 +185,75 @@ a:hover {
     height: 100vh;
 }
 
+#projects-section > h2 {
+    margin-bottom: 1rem;
+}
+
 #projectsSlides {
     width: 90%;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    #projectsSlides {
+        height: 90%;
+    }
+
+    #projectsSlides img {
+        height: 80vh;
+        object-fit: cover;
+    }
+}
+
+/************* Contact Me Section **************/
+
+#contact-section {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    height: 100vh;
+}
+
+.contact-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.side-text-contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-control {
+    margin: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .side-text-contact-form {
+        display: none;
+    }
+}
+
+/*************** Footer Section ***************/
+footer {
+    background-color: #2A0944;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+footer i {
+    color: #A12568;
+    font-size: 2rem;
+    padding: 7px;
+    background-color: #FEC260;
+    border-radius: 100px/100px;
 }
