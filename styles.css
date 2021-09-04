@@ -12,6 +12,31 @@ h1 {
 
 h2 {
     margin-bottom: 2rem;
+    position: relative;
+}
+
+h2:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+    bottom: -10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #0563bb;
+    bottom: 0;
+    left: calc(50% - 20px);
+    bottom: -10px;
 }
 
 #particles-js {
@@ -104,6 +129,14 @@ a:hover {
     #title-section div{
         padding-left: 2rem;
     }
+
+    #title-section > h1 {
+        font-size: 2rem;
+    }
+    
+    #title-section > div > span {
+        font-size: 1.5rem;
+    }
 }
 
 /***Skills Section***/
@@ -111,7 +144,7 @@ a:hover {
 #skill-section {
     display: flex;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 1rem 20%;
     height: 100vh;
 }
 
@@ -140,6 +173,12 @@ a:hover {
 
 .skill span .val {
     float: right;
+}
+
+@media only screen and (max-width: 750px) {
+    #skill-section {
+        padding: 1rem 2rem;
+    }
 }
 
 /***********About Section*************/
@@ -190,6 +229,7 @@ a:hover {
 }
 
 #projectsSlides {
+    margin-top: 2rem;
     width: 90%;
 }
 
@@ -233,6 +273,11 @@ a:hover {
 
 .form-control {
     margin: 1rem;
+}
+
+form .btn {
+    background-color: #FEC260;
+    color: #A12568;
 }
 
 @media only screen and (max-width: 768px) {

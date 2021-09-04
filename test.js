@@ -22,9 +22,9 @@ $(".nav-item i").mouseover(function(e) {
                             break;
         case "engineering": $("<span> Skills</span>").insertAfter($(e.target));
                             break;
-        case "description": $("<span> Resume</span>").insertAfter($(e.target));
+        case "description": $("<span> About</span>").insertAfter($(e.target));
                             break;
-        case "email": $("<span> Contact</span>").insertAfter($(e.target));
+        case "code": $("<span> Projects</span>").insertAfter($(e.target));
                             break;
     }
 }).mouseout(function(e) {
