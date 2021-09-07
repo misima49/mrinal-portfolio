@@ -1,9 +1,10 @@
 /*https://colorhunt.co/palette/2a09443b185fa12568fec260*/
 
-body {
+body, html {
     background-color: #3B185F;
     color: #FFF;
     text-align: center;
+    scroll-snap-type: y mandatory;
 }
 
 h1 {
@@ -45,17 +46,18 @@ h2::after {
     bottom: -10px;
 }
 
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    z-index: -1000;
-  }
+.snap-scroll-point {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+@media only screen and (max-height: 620px) {
+    .snap-scroll-point {
+        scroll-snap-align: none;
+    }
+}
+
+
 /************Navbar*************/
 #header {
     position: fixed;
