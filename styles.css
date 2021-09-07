@@ -47,6 +47,7 @@ h2::after {
 }
 
 .snap-scroll-point {
+    overflow: hidden;
     scroll-snap-align: start;
     scroll-snap-stop: always;
 }
@@ -57,6 +58,13 @@ h2::after {
     }
 }
 
+.parallax {
+    background-attachment: fixed;
+    background-position: top;
+    /* transform: rotate(-90deg); */
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
 
 /************Navbar*************/
 #header {
@@ -114,9 +122,14 @@ a:hover {
     justify-content: center;
     align-items: start;
     height: 100vh;
+    transform: rotate(90deg);
     flex-direction: column;
-    /* margin: 2rem 0.8rem 0 0; */
     font-size: 2rem;
+}
+
+.bg-0 {
+    background-image: url("images/background-images/wave.svg");
+    transform: rotate(-90deg);
 }
 
 #title-section > div > span {
@@ -135,6 +148,14 @@ a:hover {
 }
 
 @media only screen and (max-width: 750px) {
+    #title-section {
+        transform: rotate(170deg);
+    }
+
+    .bg-0 {
+        transform: rotate(-170deg);
+    }
+    
     #title-section div{
         padding-left: auto;
     }
@@ -154,7 +175,13 @@ a:hover {
     display: flex;
     align-items: center;
     padding: 1rem 20%;
+    transform: rotate(-90deg);
     height: 100vh;
+}
+
+.bg-1 {
+    background-image: url("images/background-images/wave (1).svg");
+    transform: rotate(90deg);
 }
 
 .container .row {
@@ -189,6 +216,11 @@ a:hover {
 @media only screen and (max-width: 750px) {
     #skill-section {
         padding: 1rem 2rem;
+        transform: rotate(-145deg);
+    }
+
+    .bg-1 {
+        transform: rotate(145deg);
     }
 }
 
@@ -201,7 +233,13 @@ a:hover {
     justify-content: center;
     overflow: hidden;
     padding: 2rem 1rem;
+    transform: rotate(190deg);
     height: 100vh;
+}
+
+.bg-2 {
+    background-image: url("images/background-images/wave (2).svg");
+    transform: rotate(-190deg);
 }
 
 .about-list {
@@ -232,7 +270,13 @@ a:hover {
     justify-content: center;
     overflow: hidden;
     padding: 2rem 1rem;
+    transform: rotate(-180deg);
     height: 100vh;
+}
+
+.bg-3 {
+    background-image: url("images/background-images/wave (3).svg");
+    transform: rotate(180deg);
 }
 
 #projects-section > h2 {
@@ -265,7 +309,13 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     padding: 2rem 1rem;
+    transform: rotate(90deg);
     height: 100vh;
+}
+
+.bg-4 {
+    background-image: url("images/background-images/wave (4).svg");
+    transform: rotate(-90deg);
 }
 
 .side-text-contact-form {
