@@ -129,6 +129,7 @@ a:hover {
 
 #title-section i {
     padding-top: 2rem;
+    font-size: 2rem;
 }
 
 @media only screen and (max-width: 750px) {
@@ -241,36 +242,28 @@ a:hover {
     width: 85%;
 }
 
-
+#projectsSlides img {
+    height: 80vh;
+    object-fit: cover;
+}
 
 @media only screen and (max-width: 800px) {
     #projectsSlides {
         height: 85%;
     }
 
-    #projectsSlides img {
-        height: 80vh;
-        object-fit: cover;
-    }
+    
 }
 
 /************* Contact Me Section **************/
 
 #contact-section {
     display: flex;
-    align-items: stretch;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem 1rem;
-    height: 100vh;
-}
-
-.contact-form {
-    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     padding: 2rem 1rem;
+    height: 100vh;
 }
 
 .side-text-contact-form {
@@ -281,17 +274,18 @@ a:hover {
     text-align: left;
 }
 
-.form-control {
-    margin: 1rem;
+.contact-links {
+    display: flex;
+    align-items: center;
 }
 
-form .btn {
-    background-color: #FEC260;
+#contact-section i {
     color: #A12568;
-}
-
-.input-group input, .input-group textarea {
-    background-color: #2A0944
+    font-size: 2rem;
+    padding: 7px;
+    margin: 0.7rem;
+    background-color: #FEC260;
+    border-radius: 100px/100px;
 }
 
 @media only screen and (max-width: 990.5px) {
@@ -309,10 +303,3 @@ footer {
     padding: 2rem;
 }
 
-footer i {
-    color: #A12568;
-    font-size: 2rem;
-    padding: 7px;
-    background-color: #FEC260;
-    border-radius: 100px/100px;
-}
