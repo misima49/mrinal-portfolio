@@ -14,7 +14,7 @@
 
 👤 **Mrinal Sigh Malav**
 
-* Website: https://misima49.github.io/mrinal-portfolio/
+* Website: https://me.misima.space
 * Twitter: [@MiSiMa\_49](https://twitter.com/MiSiMa\_49)
 * Github: [@misima49](https://github.com/misima49)
 * LinkedIn: [@mrinal-malav](https://linkedin.com/in/mrinal-malav)
@@ -22,6 +22,3 @@
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
