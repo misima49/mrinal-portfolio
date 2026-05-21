@@ -31,6 +31,7 @@
                 <li class="nav-item"><a href="#title-section"><i class="material-icons">home</i></a></li>
                 <li class="nav-item active"><a href="#skill-section"><i class="material-icons">engineering</i></a></li>
                 <li class="nav-item"><a href="#about-section"><i class="material-icons">description</i></a></li>
+                <li class="nav-item"><a href="#experience-section"><i class="material-icons">work</i></a></li>
                 <li class="nav-item"><a href="#projects-section"><i class="material-icons">code</i></a></li>
                 <li class="nav-item"><a href="#contact-section"><i class="material-icons">email</i></a></li>
             </ul>
@@ -46,9 +47,9 @@
                 <div>
                     <span>I am </span>
                     <div id="typed-strings">
-                        <p>a Web Developer.</p>
+                        <p>a Software Engineer.</p>
                         <p>a Designer.</p>
-                        <p>an Engineer.</p>
+                        <p>a Photographer.</p>
                         <p>a Student.</p>
                     </div>
                     <span id="typed"></span>
@@ -65,7 +66,84 @@
 
             </div>
         </div>
+    </div>
+
+       <!-- Experience Section -->
+    <div class="snap-scroll-point">
+        <div class="parallax bg-5">
+            <div class="container" id="experience-section">
+                <div data-aos="fade-right">
+                    <h2>Experience</h2>
+                    <div class="experience-intro">
+                        <p>A quick timeline of roles, responsibilities, and the kind of products I have worked on.</p>
+                    </div>
+
+                    <div class="experience-timeline">
+                        <article class="experience-entry">
+                            <div class="experience-date">
+                                <span>2024 - Present</span>
+                            </div>
+                            <div class="experience-content">
+                                <span class="experience-company">Oracle</span>
+                                <div class="experience-role">
+                                    <span class="experience-role-date">June 2026 - Present</span>
+                                    <h3>Application Software Engineer 2</h3>
+                                    <p>Developed on the Currency Exchange Rate Integration feature for the new 
+                                        Netsuite Next, creating a more robust and failproof exchage rate integration 
+                                        engine with HSBC and Xignite to be consumed by various other composnents 
+                                        like journal entries, invoices, sales order etc, to calculate gain/loss 
+                                        revaluations.
+                                    </p>
+                                </div>
+                                <div class="experience-role">
+                                    <span class="experience-role-date">Oct 2025 - June 2026</span>
+                                    <h3>Software Engineer 2</h3>
+                                    <p>Led end-to-end delivery of high-impact financial platform capabilities,
+                                        including a Financial Reports Insights feature that extracted critical data
+                                        from balance sheets, deferred revenue waterfall reports, CTA reports, and
+                                        other financial documents, materially reducing audit effort and turnaround
+                                        time. Built intelligent agent and tool workflows with <b>LangChain4j</b> to generate
+                                        actionable insights and visual charts for users.
+                                    </p>
+                                    <p>
+                                        Drove modernization of core financial systems by migrating key modules such as
+                                        Advanced Intercompany Journal and Fair Value Formula Entry from legacy entry
+                                        forms to UMD, improving performance by up to 40%. Owned the new Advanced
+                                        Intercompany Journal Entry record from the ground up, delivering automation,
+                                        UI, and deep platform integrations that enabled a seamless customer
+                                        transition. Also led migration of multiple core records from deprecated SOAP
+                                        services to secure, highly available <b>REST APIs</b>, strengthening platform
+                                        reliability and long-term scalability.
+                                    </p>
+                                </div>
+                                 <div class="experience-role">
+                                    <span class="experience-role-date">Jul 2023 - Oct 2025</span>
+                                    <h3>Software Engineer</h3>
+                                    <p>Worked with team on development of core financial capabilities in NetSuite Next, including
+                                        realized and rounding gain/loss calculation engines, and financial reporting features, 
+                                        with backend implementation in <b>Java</b> and supporting UI built using OJet (<b>ReactJS</b>). 
+                                        Delivered foundational product functionality across complex finance workflows while working closely with
+                                        platform and product requirements.
+                                    </p>
+                                    <p>
+                                        Improved engineering quality and delivery reliability by driving stronger
+                                        automation and unit testing practices using <b>JUnit</b> and <b>Groovy</b>, raising code coverage to 94% for legacy
+                                        modules and sustaining 98% for new features. Built a high-scale data
+                                        processing pipeline that analyzed more than 9 million rows of financial data
+                                        to detect and resolve corruption issues tied to exchange rate integration,
+                                        strengthening data integrity across critical financial flows. Also optimized
+                                        team execution by improving scrum lifecycle practices, branching strategy, and
+                                        feature integration workflows, while mentoring new hires to reduce ramp-up
+                                        time and accelerate team contribution.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
     <!-- Skills Section -->
     <div class="snap-scroll-point">
@@ -81,11 +159,31 @@
                             <div class="skill col-lg-6">
 
                                 <div class="skill">
+                                    <span>Java <i class="val">95%</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+
+                                <div class="skill">
                                     <span>JavaScript <i class="val">95%</i></span>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         </div>
+
+                            </div>
+
+
+
+                            <div class="skill col-lg-6">
+
+                                <div class="skill">
+                                    <span>SQL <i class="val">95%</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
 
                                 <div class="skill">
                                     <span>ReactJS <i class="val">90%</i></span>
@@ -101,18 +199,18 @@
                             <div class="skill col-lg-6">
 
                                 <div class="skill">
-                                    <span>NodeJS <i class="val">90%</i></span>
+                                    <span>LangGraph and LangChain <i class="val">80%</i></span>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
 
                                 <div class="skill">
-                                    <span>MongoDB <i class="val">95%</i></span>
+                                    <span>Git <i class="val">95%</i></span>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
 
@@ -121,34 +219,14 @@
                             <div class="skill col-lg-6">
 
                                 <div class="skill">
-                                    <span>C/C++ <i class="val">95%</i></span>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-
-                                <div class="skill">
-                                    <span>GitHub <i class="val">95%</i></span>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        </div>
-
-                            </div>
-
-
-
-                            <div class="skill col-lg-6">
-
-                                <div class="skill">
-                                    <span>ExpressJS <i class="val">90%</i></span>
+                                    <span>Prompt Engineering <i class="val">90%</i></span>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
 
                                 <div class="skill">
-                                    <span>OOPs <i class="val">80%</i></span>
+                                    <span>JUnit / Playwirght <i class="val">80%</i></span>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
@@ -181,13 +259,13 @@
                                 <li><strong>Contact no.:</strong> +91 7905768694</li>
                                 <li><strong>Most recent qualification:</strong> B.Tech</li>
                                 <li><strong>View Resume:</strong> <a
-                                        href="https://drive.google.com/file/d/19i1Vcn1bTohIcPuMhcjWhbE7kTgCJQVe/view?usp=sharing"
+                                        href="https://drive.google.com/file/d/1BdYSv3M-fU81zKYR_6WxxmZuJX44GIfh/view?usp=drive_link"
                                         target="_blank" rel="noopener noreferrer"> Resume</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <ul class="about-list">
-                                <li><strong>Age:</strong> 19 Years</li>
+                                <li><strong>Current company:</strong> Oracle (Netsuite)</li>
                                 <li><strong>Email:</strong> malavmrinal@gmail.com</li>
                                 <li><strong>Major in:</strong> Computer Engineering</li>
                             </ul>
@@ -302,7 +380,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-    <script src="test.js"></script>
+    <script src="effects.js"></script>
 </body>
 
 <footer>

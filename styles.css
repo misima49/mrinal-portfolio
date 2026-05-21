@@ -59,11 +59,18 @@ h2::after {
 }
 
 .parallax {
+    --parallax-shift-x: 0px;
+    --parallax-shift-y: 0px;
+    --parallax-base-y: 0px;
+    --parallax-rotation: 0deg;
+    --parallax-angle: 0deg;
+    --parallax-direction: 1;
     background-attachment: fixed;
-    background-position: top;
+    background-position: calc(50% + var(--parallax-shift-x)) calc(var(--parallax-base-y) + var(--parallax-shift-y));
     /* transform: rotate(-90deg); */
     background-repeat: no-repeat;
     /* background-size: cover; */
+    will-change: background-position;
 }
 
 /************Navbar*************/
@@ -128,6 +135,9 @@ a:hover {
 }
 
 .bg-0 {
+    --parallax-rotation: -90deg;
+    --parallax-angle: 0deg;
+    --parallax-direction: -1;
     background-image: url("images/background-images/wave.svg");
     transform: rotate(-90deg);
 }
@@ -153,6 +163,7 @@ a:hover {
     }
 
     .bg-0 {
+        --parallax-rotation: -170deg;
         transform: rotate(-170deg);
     }
     
@@ -180,6 +191,9 @@ a:hover {
 }
 
 .bg-1 {
+    --parallax-rotation: 90deg;
+    --parallax-angle: 0deg;
+    --parallax-direction: 1;
     background-image: url("images/background-images/wave (1).svg");
     transform: rotate(90deg);
 }
@@ -220,6 +234,7 @@ a:hover {
     }
 
     .bg-1 {
+        --parallax-rotation: 145deg;
         transform: rotate(145deg);
     }
 }
@@ -238,6 +253,9 @@ a:hover {
 }
 
 .bg-2 {
+    --parallax-rotation: -190deg;
+    --parallax-angle: 30deg;
+    --parallax-direction: 1;
     background-image: url("images/background-images/wave (2).svg");
     transform: rotate(-190deg);
 }
@@ -261,6 +279,186 @@ a:hover {
     color: #FEC260;
 }
 
+/*********** Experience Section *************/
+
+#experience-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 4rem 12%;
+    transform: rotate(180deg);
+}
+
+.bg-5 {
+    --parallax-base-y: 40vh;
+    --parallax-rotation: -180deg;
+    --parallax-angle: 20deg;
+    --parallax-direction: 1;
+    background-image: url("images/background-images/wave (4).svg");
+    transform: rotate(-180deg);
+}
+
+.experience-intro {
+    margin: 0 auto 2.5rem;
+    max-width: 700px;
+}
+
+.experience-timeline {
+    --experience-line-x: 2rem;
+    --experience-entry-offset: 5.5rem;
+    --experience-date-width: 10rem;
+    position: relative;
+    margin: 0 auto;
+    max-width: 900px;
+    padding-left: var(--experience-entry-offset);
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: var(--experience-line-x);
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 4px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #FEC260 0%, #D62AD0 100%);
+    transform: translateX(-50%);
+}
+
+.experience-entry {
+    position: relative;
+    padding-left: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.experience-entry:last-child {
+    margin-bottom: 0;
+}
+
+.experience-entry::before {
+    content: '';
+    position: absolute;
+    left: calc(var(--experience-line-x) - var(--experience-entry-offset));
+    top: 1.2rem;
+    width: 18px;
+    height: 18px;
+    border: 4px solid #FEC260;
+    border-radius: 50%;
+    background-color: #2A0944;
+    box-shadow: 0 0 0 8px rgba(254, 194, 96, 0.15);
+    transform: translateX(-50%);
+}
+
+.experience-date {
+    position: absolute;
+    top: 0.8rem;
+    left: calc(var(--experience-line-x) - var(--experience-entry-offset) - var(--experience-date-width) - 1.5rem);
+    width: var(--experience-date-width);
+    text-align: right;
+    color: #FFEBA1;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.experience-content {
+    text-align: left;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    background: rgba(42, 9, 68, 0.72);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 24px 45px rgba(0, 0, 0, 0.18);
+}
+
+.experience-company {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: #FEC260;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.experience-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.45rem;
+}
+
+.experience-role {
+    padding-top: 1rem;
+}
+
+.experience-role-date {
+    display: inline-block;
+    margin-bottom: 0.55rem;
+    color: #FFEBA1;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.experience-role + .experience-role {
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.experience-role h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.45rem;
+}
+
+.experience-role p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+@media only screen and (max-width: 990.5px) {
+    #experience-section {
+        padding: 3rem 2.5rem;
+    }
+
+    .experience-timeline {
+        --experience-entry-offset: 3.25rem;
+        --experience-date-width: 8rem;
+    }
+
+    .experience-entry {
+        padding-left: 0;
+    }
+
+    .experience-date {
+        position: static;
+        margin-bottom: 0.75rem;
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #experience-section {
+        transform: rotate(165deg);
+        padding: 3rem 1.5rem;
+    }
+
+    .bg-5 {
+        --parallax-rotation: -165deg;
+        transform: rotate(-165deg);
+    }
+
+    .experience-timeline {
+        --experience-line-x: 1rem;
+        --experience-entry-offset: 2.4rem;
+    }
+
+    .experience-content {
+        padding: 1.25rem;
+    }
+}
+
 /********** Projects/Contributions Section **********/
 
 #projects-section {
@@ -275,6 +473,9 @@ a:hover {
 }
 
 .bg-3 {
+    --parallax-rotation: 180deg;
+    --parallax-angle: 120deg;
+    --parallax-direction: -1;
     background-image: url("images/background-images/wave (3).svg");
     transform: rotate(180deg);
 }
@@ -314,6 +515,9 @@ a:hover {
 }
 
 .bg-4 {
+    --parallax-rotation: -90deg;
+    --parallax-angle: 0deg;
+    --parallax-direction: 1;
     background-image: url("images/background-images/wave (4).svg");
     transform: rotate(-90deg);
 }
@@ -354,4 +558,3 @@ footer {
     justify-content: center;
     padding: 2rem;
 }
-
