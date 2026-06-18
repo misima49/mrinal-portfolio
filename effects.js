@@ -37,6 +37,59 @@ $(".nav-item i").mouseover(function (e) {
   $(e.target).next().remove();
 })
 
+function createPhotographyLightbox() {
+  const overlay = document.createElement('div');
+  overlay.className = 'photography-lightbox';
+  overlay.setAttribute('hidden', '');
+  overlay.setAttribute('aria-hidden', 'true');
+
+  const closeButton = document.createElement('button');
+  closeButton.type = 'button';
+  closeButton.className = 'photography-lightbox-close';
+  closeButton.setAttribute('aria-label', 'Close full size image');
+  closeButton.textContent = '×';
+
+  const image = document.createElement('img');
+  image.className = 'photography-lightbox-image';
+  image.alt = '';
+
+  overlay.appendChild(closeButton);
+  overlay.appendChild(image);
+  document.body.appendChild(overlay);
+
+  const closeLightbox = () => {
+    overlay.setAttribute('hidden', '');
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.classList.remove('is-visible');
+    image.removeAttribute('src');
+    document.body.classList.remove('lightbox-open');
+  };
+
+  closeButton.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', (event) => {
+    if (event.target === overlay) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && overlay.classList.contains('is-visible')) {
+      closeLightbox();
+    }
+  });
+
+  return {
+    open(src, alt) {
+      image.src = src;
+      image.alt = alt || '';
+      overlay.removeAttribute('hidden');
+      overlay.setAttribute('aria-hidden', 'false');
+      overlay.classList.add('is-visible');
+      document.body.classList.add('lightbox-open');
+    }
+  };
+}
+
 function initializePhotographyCarousel() {
   const carousel = document.querySelector('#photographySlides');
 
@@ -53,6 +106,8 @@ function initializePhotographyCarousel() {
     carousel.hidden = true;
     return;
   }
+
+  const lightbox = createPhotographyLightbox();
 
   indicators.replaceChildren();
   inner.replaceChildren();
@@ -81,11 +136,22 @@ function initializePhotographyCarousel() {
     const content = document.createElement('div');
     content.className = 'carousel-slide-content';
 
+    const imageLink = document.createElement('a');
+    imageLink.className = 'carousel-slide-link';
+    imageLink.href = slide.fullSrc || slide.src;
+    imageLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      lightbox.open(slide.fullSrc || slide.src, slide.alt || slide.title || `Photo ${index + 1}`);
+    });
+
     const image = document.createElement('img');
     image.className = 'd-block w-100';
-    image.src = slide.src;
+    image.dataset.src = slide.src;
     image.alt = slide.alt || slide.title || `Photo ${index + 1}`;
-    content.appendChild(image);
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    imageLink.appendChild(image);
+    content.appendChild(imageLink);
 
     const caption = document.createElement('div');
     caption.className = 'carousel-caption';
@@ -108,6 +174,46 @@ function initializePhotographyCarousel() {
   controls.forEach((control) => {
     control.hidden = slides.length < 2;
   });
+
+  const items = Array.from(inner.querySelectorAll('.carousel-item'));
+  const loadSlideImage = (itemIndex) => {
+    const slideItem = items[itemIndex];
+
+    if (!slideItem) {
+      return;
+    }
+
+    const slideImage = slideItem.querySelector('img[data-src]');
+
+    if (!slideImage) {
+      return;
+    }
+
+    slideImage.src = slideImage.dataset.src;
+    slideImage.removeAttribute('data-src');
+  };
+
+  const loadNearbySlides = (activeIndex) => {
+    const indexesToLoad = new Set([
+      activeIndex,
+      (activeIndex + 1) % items.length,
+      (activeIndex - 1 + items.length) % items.length
+    ]);
+
+    indexesToLoad.forEach(loadSlideImage);
+  };
+
+  loadNearbySlides(0);
+
+  carousel.addEventListener('slid.bs.carousel', (event) => {
+    if (typeof event.to === 'number') {
+      loadNearbySlides(event.to);
+    }
+  });
+
+  if (window.bootstrap && typeof window.bootstrap.Carousel === 'function') {
+    window.bootstrap.Carousel.getOrCreateInstance(carousel);
+  }
 }
 
 const parallaxSections = document.querySelectorAll('.parallax');

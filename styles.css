@@ -521,6 +521,14 @@ a:hover {
     padding: 1.5rem;
 }
 
+.portfolio-carousel .carousel-slide-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    flex: 1 1 auto;
+}
+
 .portfolio-carousel img {
     width: 100%;
     height: 100%;
@@ -559,6 +567,49 @@ a:hover {
     color: #FFF;
     font-size: 1rem;
     line-height: 1.6;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+.photography-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(10, 6, 18, 0.92);
+    backdrop-filter: blur(6px);
+}
+
+.photography-lightbox.is-visible {
+    display: flex;
+}
+
+.photography-lightbox-image {
+    max-width: min(92vw, 1800px);
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.photography-lightbox-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFF;
+    font-size: 2rem;
+    line-height: 1;
 }
 
 @media only screen and (max-width: 800px) {

@@ -5,7 +5,45 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 PHOTOGRAPHY_DIR="${PROJECT_ROOT}/images/photography"
+WEB_DIR="${PHOTOGRAPHY_DIR}/web"
 OUTPUT_PATH="${PHOTOGRAPHY_DIR}/photography-slides.js"
+WEB_MAX_DIMENSION="${PHOTOGRAPHY_WEB_MAX_DIMENSION:-1800}"
+WEB_QUALITY="${PHOTOGRAPHY_WEB_QUALITY:-82}"
+
+ensure_web_dir() {
+  mkdir -p "${WEB_DIR}"
+}
+
+generate_web_image() {
+  local input_path="$1"
+  local output_path="$2"
+
+  if command -v magick >/dev/null 2>&1; then
+    magick "${input_path}" -auto-orient -resize "${WEB_MAX_DIMENSION}x${WEB_MAX_DIMENSION}>" -strip -quality "${WEB_QUALITY}" "${output_path}"
+    return
+  fi
+
+  if command -v convert >/dev/null 2>&1; then
+    convert "${input_path}" -auto-orient -resize "${WEB_MAX_DIMENSION}x${WEB_MAX_DIMENSION}>" -strip -quality "${WEB_QUALITY}" "${output_path}"
+    return
+  fi
+
+  if command -v sips >/dev/null 2>&1; then
+    sips --resampleHeightWidthMax "${WEB_MAX_DIMENSION}" --setProperty formatOptions "${WEB_QUALITY}" "${input_path}" --out "${output_path}" >/dev/null
+    return
+  fi
+
+  cp "${input_path}" "${output_path}"
+}
+
+ensure_web_image() {
+  local input_file="$1"
+  local output_file="${WEB_DIR}/$1"
+
+  if [[ ! -f "${output_file}" || "${PHOTOGRAPHY_DIR}/${input_file}" -nt "${output_file}" ]]; then
+    generate_web_image "${PHOTOGRAPHY_DIR}/${input_file}" "${output_file}"
+  fi
+}
 
 format_title() {
   local slug="$1"
@@ -64,11 +102,14 @@ while IFS= read -r file; do
 done < <(printf '%s\n' "${files[@]##*/}" | sort)
 files=("${sorted_files[@]}")
 
+ensure_web_dir
+
 {
   printf 'window.photographySlidesData = [\n'
 
   for i in "${!files[@]}"; do
     file="${files[$i]}"
+    ensure_web_image "${file}"
     basename="${file%.*}"
     title_slug="${basename%%__*}"
     subtitle_slug=""
@@ -83,7 +124,8 @@ files=("${sorted_files[@]}")
     [[ -z "${title}" ]] && title="Photo $((i + 1))"
 
     printf '  {\n'
-    printf '    "src": "./images/photography/%s",\n' "$(escape_js "${file}")"
+    printf '    "src": "./images/photography/web/%s",\n' "$(escape_js "${file}")"
+    printf '    "fullSrc": "./images/photography/%s",\n' "$(escape_js "${file}")"
     printf '    "alt": "%s",\n' "$(escape_js "${title}")"
     printf '    "title": "%s",\n' "$(escape_js "${title}")"
     printf '    "description": "%s"\n' "$(escape_js "${subtitle}")"
