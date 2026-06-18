@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Mrinal Singh Malav</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/site.webmanifest">
     <header></header>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -33,6 +33,7 @@
                 <li class="nav-item active"><a href="#skill-section"><i class="material-icons">engineering</i></a></li>
                 <li class="nav-item"><a href="#about-section"><i class="material-icons">description</i></a></li>
                 <li class="nav-item"><a href="#projects-section"><i class="material-icons">code</i></a></li>
+                <li class="nav-item"><a href="#photography-section"><i class="material-icons">camera_alt</i></a></li>
                 <li class="nav-item"><a href="#contact-section"><i class="material-icons">email</i></a></li>
             </ul>
         </nav>
@@ -284,7 +285,7 @@
             <div class="container" id="projects-section">
                 <h2>Projects/Contributions</h2>
 
-                <div id="projectsSlides" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div id="projectsSlides" class="carousel carousel-dark slide portfolio-carousel" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#projectsSlides" data-bs-slide-to="0" class="active" aria-current="true"
                             aria-label="Slide 1"></button>
@@ -294,7 +295,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item">
                             <a href="https://iiit-security-system.herokuapp.com/login" target="_blank" rel="noopener noreferrer">
-                                <img src="./images/iiit-security.png" class="d-block w-100" alt="...">
+                                <img src="./images/projects/iiit-security.png" class="d-block w-100" alt="...">
                                 <div class="carousel-caption">
 
                                     <h5>IIIT Security System</h5>
@@ -305,7 +306,7 @@
                                 </div>
                                 <div class="carousel-item active">
                                     <a href="https://image-db-hackerearth.herokuapp.com/" target="_blank" rel="noopener noreferrer">
-                                        <img src="./images/imageDB.png" class="d-block w-100" alt="...">
+                                        <img src="./images/projects/imageDB.png" class="d-block w-100" alt="...">
                                         <div class="carousel-caption">
 
                                     <h5>ImageDB</h5>
@@ -315,7 +316,7 @@
                                     </div>
                                     <div class="carousel-item">
                                         <a href="https://breaking-bad-db.netlify.app/" target="_blank" rel="noopener noreferrer">
-                                            <img src="./images/breaking-badDB.png" class="d-block w-100" alt="...">
+                                            <img src="./images/projects/breaking-badDB.png" class="d-block w-100" alt="...">
                                             <div class="carousel-caption">
                                                 <h5>Breaking Bad Client</h5>
                                                 <p>Get all info on characters of Breaking Bad.</p>
@@ -333,6 +334,28 @@
                                     </button>
                 </div>
                 </div>
+        </div>
+    </div>
+
+    <!-- Photography Section -->
+    <div class="snap-scroll-point">
+        <div class="parallax bg-6">
+            <div class="container" id="photography-section">
+                <h2>Photography</h2>
+
+                <div id="photographySlides" class="carousel carousel-dark slide portfolio-carousel" data-bs-ride="carousel">
+                    <div class="carousel-indicators"></div>
+                    <div class="carousel-inner"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#photographySlides" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#photographySlides" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -382,6 +405,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
+    <script src="./images/photography/photography-slides.js"></script>
     <script src="effects.js"></script>
 </body>
 

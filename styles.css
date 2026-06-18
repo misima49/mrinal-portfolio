@@ -461,7 +461,8 @@ a:hover {
 
 /********** Projects/Contributions Section **********/
 
-#projects-section {
+#projects-section,
+#photography-section {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -480,22 +481,88 @@ a:hover {
     transform: rotate(180deg);
 }
 
-#projects-section > h2 {
+#photography-section {
+    padding-top: 3rem;
+}
+
+.bg-6 {
+    --parallax-rotation: 180deg;
+    --parallax-angle: 45deg;
+    --parallax-direction: 1;
+    background-image: url("images/background-images/wave (1).svg");
+    transform: rotate(180deg);
+}
+
+#projects-section > h2,
+#photography-section > h2 {
     margin-bottom: 1rem;
 }
 
-#projectsSlides {
+.portfolio-carousel {
     margin-top: 2rem;
     width: 85%;
 }
 
-#projectsSlides img {
+.portfolio-carousel .carousel-inner {
+    width: 100%;
+}
+
+.portfolio-carousel .carousel-item {
     height: 80vh;
-    object-fit: cover;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-carousel .carousel-item a,
+.portfolio-carousel .carousel-slide-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.portfolio-carousel img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
+    flex: 1 1 auto;
+}
+
+.portfolio-carousel .carousel-caption {
+    position: static;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    padding: 1rem 0 0;
+    margin: 0;
+    color: #FFF;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.portfolio-carousel .carousel-caption h5 {
+    color: #FEC260;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.portfolio-carousel .carousel-caption h5,
+.portfolio-carousel .carousel-caption p {
+    margin-bottom: 0;
+}
+
+.portfolio-carousel .carousel-caption p {
+    margin-top: 0.35rem;
+    color: #FFF;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 @media only screen and (max-width: 800px) {
-    #projectsSlides {
+    .portfolio-carousel {
         height: 85%;
     }
 
